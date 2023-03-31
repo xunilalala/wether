@@ -29,6 +29,8 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
+      - name: 'Install requirements'
+        run: pip install -r ./Spider/requirements.txt
 
       - name: 'Working'
         run: |
