@@ -17,7 +17,7 @@ days_remaining = (last_day_of_month - today).days
 day = days_remaining
 
 # 设置收件人列表
-to_list = ['3120294679@qq.com', '18264410349@163.com']
+to_list = ['3120294679@qq.com', '3220653844@qq.com','2263027701@qq.com','2505668044@qq.com','3046014470@qq.com',]
 
 # 邮件正文中的话
 message = "Thank you for subscribing to the \"Weather Forecast Monthly/2 $\" service. There are " + str(day) + " days left until the end of the service. In order to ensure your experience, please renew in a timely manner."
