@@ -1,4 +1,4 @@
 from aligo import Aligo
 import time
-ali = Aligo(email=('xxx@qq.com', '防伪字符串，可任意字符串'))
+ali = Aligo(email=('3120294679@qq.com', 'github_login'))
 time.sleep(30)
