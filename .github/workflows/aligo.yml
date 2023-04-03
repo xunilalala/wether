@@ -34,5 +34,6 @@ jobs:
 
       - name: 'Working'
         run: |
+          python ./Spider/aligologin.py
           python ./Spider/aligo-auto-check-in.py
                   
