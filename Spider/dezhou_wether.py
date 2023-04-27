@@ -48,7 +48,7 @@ for to in to_list:
     msg.attach(text)
 
     # 创建MIMEImage对象，添加图片
-    image = MIMEImage(response.content)
+    image = MIMEImage(response.content, _subtype='png')
     image.add_header('Content-ID', '<image1>')
     msg.attach(image)
 
