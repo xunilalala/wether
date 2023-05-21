@@ -17,7 +17,7 @@ days_remaining = (last_day_of_month - today).days
 day = days_remaining
 
 # 设置收件人列表
-to_list = ['18217132873@163.com','3220653844@qq.com','2505668044@qq.com','3046014470@qq.com','2781168417@11.com']
+to_list = ['3120294679@qq.com', '18264410349@163.com']
 
 # 邮件正文中的话
 message = "Thank you for subscribing to the \"Weather Forecast Monthly/2 $\" service. There are " + str(day) + " days left until the end of the service. In order to ensure your experience, please renew in a timely manner."
@@ -27,7 +27,7 @@ response = requests.get("https://wttr.in/dezhou.png")
 
 smtp_server = "smtp.qq.com"
 smtp_port = 25
-smtp_username = "1592585947@qq.com"
+smtp_username = "159258597@qq.com"
 smtp_password = "skuioorvpiumheif"
 
 for to in to_list:
@@ -48,13 +48,16 @@ for to in to_list:
     msg.attach(text)
 
     # 创建MIMEImage对象，添加图片
-    image = MIMEImage(response.content, _subtype='png')
+    image = MIMEImage(response.content)
     image.add_header('Content-ID', '<image1>')
     msg.attach(image)
 
     # 发送邮件
-    server = smtplib.SMTP(smtp_server, smtp_port)
-    server.login(smtp_username, smtp_password)
-    server.sendmail(smtp_username, to, msg.as_string())
-    server.quit()
-    print(f"Email sent to {to} successfully!")
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.login(smtp_username, smtp_password)
+        server.sendmail(smtp_username, to, msg.as_string())
+        server.quit()
+        print(f"Email sent to {to} successfully!")
+    except:
+        print(f"Email sent to {to} NO successfully!")
